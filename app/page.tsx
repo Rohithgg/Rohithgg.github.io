@@ -8,7 +8,6 @@ import { useState } from "react"
 import { TypingAnimation } from "@/components/typing-animation"
 import TextType from "./textType"
 import ASCIIText from "./asciiAnimation"
-import TerminalEffects from "./terminalEffects"
 import MatrixAnimation from "./matrixAnimation"
 
 export default function HomePage() {
@@ -172,15 +171,12 @@ export default function HomePage() {
     <div className="min-h-screen bg-black text-emerald-400">
       {/* Matrix Animation Background */}
       <MatrixAnimation 
-        density={0.98}
+        density={0.99}
         speed={50}
-        fontSize={12}
+        fontSize={10}
         color="#10b981"
-        opacity={0.08}
+        opacity={0.12}
       />
-      
-      {/* Terminal Effects Overlay */}
-      <TerminalEffects />
       
       <section className="relative h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
         <div className="text-center font-mono w-full max-w-6xl mx-auto">
@@ -237,10 +233,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 font-mono">
+      <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 font-mono z-20">
         <section id="about" className="mb-12 sm:mb-16 lg:mb-20">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-black/90 border-2 border-emerald-400 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 rounded-lg">
+            <div className="bg-black/20 backdrop-blur-md border-2 border-emerald-400/60 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 rounded-lg">{}
               <div className="flex items-center mb-3 sm:mb-4">
                 <span className="text-emerald-400 mr-2 text-sm sm:text-base">rohith@dev:~$</span>
                 <Button
@@ -331,7 +327,7 @@ export default function HomePage() {
             {experienceData.map((exp, index) => (
               <Card
                 key={index}
-                className="group bg-black/80 border-2 border-emerald-600 hover:border-emerald-400 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/30"
+                className="group bg-black/20 backdrop-blur-md border-2 border-emerald-600/60 hover:border-emerald-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/30"
               >
                 <CardHeader className="pb-3 sm:pb-4">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 sm:mb-3 gap-2">
@@ -391,7 +387,7 @@ export default function HomePage() {
             {projects.map((post, index) => (
               <Card
                 key={index}
-                className="group bg-black/80 border-2 border-emerald-600 hover:border-emerald-400 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/30"
+                className="group bg-black/20 backdrop-blur-md border-2 border-emerald-600/60 hover:border-emerald-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/30"
               >
                 <CardHeader className="pb-3 sm:pb-4">
                   <div className="flex items-center justify-between mb-2 sm:mb-3">
@@ -461,7 +457,7 @@ export default function HomePage() {
         </section>
 
         <section className="mb-8 sm:mb-12 text-center">
-          <Card className="max-w-4xl mx-auto bg-black/80 border-2 border-emerald-400">
+          <Card className="max-w-4xl mx-auto bg-black/20 backdrop-blur-md border-2 border-emerald-400/60">
             <CardHeader>
               <CardTitle className="font-mono text-base sm:text-lg font-bold text-emerald-400">
                 &gt; connect_with_me.sh
@@ -506,7 +502,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="border-t-2 border-emerald-400 bg-black/90 mt-12 sm:mt-20">
+      <footer className="relative border-t-2 border-emerald-400/60 bg-black/20 backdrop-blur-md mt-12 sm:mt-20 z-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center">
           <p className="font-mono text-emerald-500 text-xs sm:text-sm">
             &gt; © 2025 Rohith Gona | Software Engineer | Hyderabad, India
@@ -522,12 +518,12 @@ export default function HomePage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/40 backdrop-blur-md"
             onClick={closeProjectModal}
           ></div>
           
           {/* Modal Content */}
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-black border-2 border-emerald-400 rounded-lg shadow-2xl shadow-emerald-400/20">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-black/30 backdrop-blur-lg border-2 border-emerald-400/60 rounded-lg shadow-2xl shadow-emerald-400/20">
             <div className="p-6 sm:p-8">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
